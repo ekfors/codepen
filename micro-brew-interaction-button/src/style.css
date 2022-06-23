@@ -1,0 +1,233 @@
+*, *::before, *::after, *:hover, *:active, *:focus {
+        border: 0;
+        margin: 0;
+        border: 0;
+        outline: none;
+        box-sizing: border-box;
+        --unit:.5vw;
+        --button-bg: #f15a24;
+        --button-pattern: #e04a0f;
+        }
+
+*::before, *::after{
+        content: ' ';
+        }
+
+body{
+        width: 100vw;
+        height: 100vh;
+        background-color: #8cb8c5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+
+button{
+        color: white;
+        background-color: var(--button-bg);
+        font-size: calc(14 * var(--unit));
+        font-family: 'Roboto', Helvetica, Arial, sans-serif;
+        padding:calc(3 * var(--unit)) calc(12 * var(--unit));
+        border-radius: calc(5 * var(--unit));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center; 
+        cursor: pointer;
+        box-shadow: calc(1 * var(--unit)) calc(1 * var(--unit)) calc(4 * var(--unit))  rgba(0, 0, 0, .3), calc(.5 * var(--unit)) calc(.5 * var(--unit)) calc(2 * var(--unit))  rgba(0, 0, 0, .1) ;
+        transition: .5s ease-in-out;
+    }
+
+button:hover{
+	background-color: var(--button-pattern);
+}
+
+.click{
+        background-color: var(--button-bg);
+        background-image:  linear-gradient(135deg, var(--button-pattern) 25%, transparent 25%), linear-gradient(225deg, var(--button-pattern) 25%, transparent 25%), linear-gradient(45deg, var(--button-pattern) 25%, transparent 25%), linear-gradient(315deg, var(--button-pattern) 25%, var(--button-bg) 25%);
+        background-position:  calc(4 * var(--unit)) 0, calc(4 * var(--unit)) 0, 0 0, 0 0;
+        background-size: calc(8 * var(--unit)) calc(8 * var(--unit)) ;
+        background-repeat: repeat;
+}
+
+.click > .icon{
+        animation: shake .5s infinite;
+    }
+
+.click > .icon > .foam{
+        animation: shake-top .5s infinite .015s;
+    }
+
+.icon{
+        width: calc(24 * var(--unit)) ;
+        height: calc(24 * var(--unit)) ;
+        perspective: 1000;
+        transform: rotate(0deg);
+        transform-origin: 75% 75%;
+   }
+
+.foam, .foam::before, .foam::after, .bubbles, .bubbles::before, .bubbles::after, .bubbles-small, .bubbles-small::before, .bubbles-small::after, .drip, .drip::before, .drip::after {
+        position:absolute;
+        background-color: white;
+        border-radius:50%;
+    }
+.foam, .foam::before, .foam::after {
+        width: calc(6 * var(--unit)) ;
+        height: calc(6 * var(--unit)) ;
+    }
+.foam{
+        margin-left:calc(5 * var(--unit));
+        margin-top:calc(2 * var(--unit));
+        z-index: 10;
+        transform-origin: 50% 50%;
+    }
+.foam::before{
+        margin-left:0;
+        margin-top:0;
+    }
+.foam::after{
+        margin-left:calc(3 * var(--unit));
+        margin-top:calc(1 * var(--unit));
+    }
+
+.bubbles, .bubbles::before, .bubbles::after{
+        width: calc(4 * var(--unit));
+        height: calc(4 * var(--unit));
+    }
+.bubbles{
+        margin-left:calc(-1 * var(--unit));
+        margin-top:calc(3 * var(--unit));
+    }
+.bubbles::before{
+        margin-left:calc(1 * var(--unit));
+        margin-top:0;
+    }
+.bubbles::after{
+        margin-left:calc(9 * var(--unit));
+        margin-top:0;
+    }
+
+.bubbles-small, .bubbles-small::before, .bubbles-small::after{
+        width: calc(1 * var(--unit));
+        height: calc(1 * var(--unit));
+    }
+.bubbles-small{
+        margin-left:calc(-1 * var(--unit));
+        margin-top:calc(1 * var(--unit));
+        animation: bubble-init 1.5s 1 ;
+    }
+.bubbles-small::before{
+        margin-left:calc(9 * var(--unit));
+        margin-top:calc(-2 * var(--unit));
+    }
+.bubbles-small::after{
+        margin-left:calc(12 * var(--unit));
+        margin-top:calc(-1 * var(--unit));
+    }
+
+.drip, .drip::before, .drip::after{
+        width: calc(1 * var(--unit));
+        height: calc(5 * var(--unit));
+        border-radius:calc(1 * var(--unit));
+    }
+.drip{
+        margin-left:calc(2 * var(--unit));
+        margin-top:calc(5 * var(--unit));
+        animation: drip-init 3s 1;
+    }
+
+.drip::before{
+        margin-left:calc(1 * var(--unit));
+        margin-top:calc(-2 * var(--unit));
+    }
+.drip::after{
+        margin-left:calc(7 * var(--unit));
+        margin-top:calc(-1 * var(--unit));
+    }
+
+.glass{
+        position:absolute;
+        background-color: #fbb03b;
+        width: calc(13 * var(--unit));
+        height: calc(17 * var(--unit));
+        border: calc(1 * var(--unit)) solid white;
+        border-radius: calc(2 * var(--unit));
+        left:calc(5 * var(--unit));
+        top:calc(5 * var(--unit));
+       }
+.glass::before {
+        background-color: #e59a38;
+        position:absolute;
+        width: calc(2 * var(--unit));
+        height: calc(7 * var(--unit));
+        border-radius: calc(2 * var(--unit)); 
+        left:calc(7 * var(--unit));
+        top:calc(6 * var(--unit));
+    }
+.glass::after {
+        position:absolute;
+        width: calc(5 * var(--unit));
+        height: calc(9 * var(--unit));
+        border: calc(1 * var(--unit)) solid white;
+        border-radius: calc(1 * var(--unit)) calc(2 * var(--unit)) calc(2 * var(--unit)) calc(1 * var(--unit)); 
+        left:calc(11 * var(--unit));
+        top:calc(4 * var(--unit));
+    }
+
+@keyframes drip-init {
+  0%{transform: translateY(calc(-2 * var(--unit)));
+    animation-timing-function: ease-out;
+  }
+  100% {transform: translateY(0);
+    animation-timing-function: ease-in;
+  }
+}
+
+@keyframes bubble-init {
+  0%{transform: translateY(calc(2 * var(--unit)));
+    animation-timing-function: ease-out;
+  }
+  100% {transform: translateY(0);
+    animation-timing-function: ease-in;
+  }
+}
+
+@keyframes shake {
+  0%{transform: rotate(0deg);
+    animation-timing-function: ease-out;
+
+  }
+    25%{transform: rotate(-3deg);
+        animation-timing-function: ease-in;
+  }
+  50%{transform: rotate(0deg);
+    animation-timing-function: linear;
+
+  }  
+  75%{transform: rotate(3deg);
+    animation-timing-function: ease-in;
+}
+  100%{transform: rotate(0deg);
+    animation-timing-function: ease-in-out;
+  }
+}
+
+@keyframes shake-top {
+  0%{transform: rotate(0deg);
+    animation-timing-function: ease-out;
+
+  }
+  25%{transform: rotate(-1.5deg);
+        animation-timing-function: ease-in;
+  }
+  50%{transform: rotate(0deg);
+    animation-timing-function: linear;
+
+  }  
+  75%{transform: rotate(1.5deg);
+    animation-timing-function: ease-in;
+}
+  100%{transform: rotate(0deg);
+    animation-timing-function: ease-in-out;
+  }

@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background: #efefef;
+}
+
+.letters {
+  width: 20vw;
+  height: 20vw;
+  float: left;
+  mix-blend-mode: multiply;
+}
+
+.letter-l {
+  background-color: #1e00ff;
+  clip-path: polygon(0 0, 50% 0, 50% 65%, 100% 65%, 100% 100%, 0 100%);
+}
+
+.letter-o {
+  background-color: #ff0061;
+  clip-path: circle(50%);
+  margin-left: -8vw;
+}
+
+.letter-v {
+  background-color: #e1ff00;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  margin-left: -6vw;
+}
+
+.letter-e {
+  background-color: #00ff9e;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 35%,
+    50% 35%,
+    50% 40%,
+    100% 40%,
+    100% 60%,
+    50% 60%,
+    50% 65%,
+    100% 65%,
+    100% 100%,
+    0 100%
+  );
+  margin-left: -4vw;
+}
